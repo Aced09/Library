@@ -5,18 +5,18 @@ public abstract class Publication {
 	private static int idnumber = 1;
 	private String publicationName;
 	private String publicationDate;
-	boolean taken;
+	boolean taken = false;
 	
 	Publication()
 	{
 		
 	}
 	
-	Publication(String publicationAddress, String publicationDate)
+	Publication(String publicationName, String publicationDate)
 	{
 		publicationID = idnumber;
 		idnumber++;
-		this.publicationName = publicationAddress;
+		this.publicationName =  publicationName;
 		this.publicationDate = publicationDate;
 	}
 
