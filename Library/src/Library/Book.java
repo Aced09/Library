@@ -16,7 +16,7 @@ public class Book extends Publication {
 		super(publicationName, publicationDate);
 		this.author = author;
 		this.NOP = NOP;
-		
+		// to add books to the library
 		for(int i = 0; i < libo.books.length; i++)
 		{
 			if(libo.books[i] == null)
@@ -26,7 +26,7 @@ public class Book extends Publication {
 			}
 		}
 	}
-	
+	// to return id & name of the book 
 	public String toString()
 	{
 		return "Book id: " + super.getPublicationID() + "\n" + "Book name: " + super.getPublicationName();
