@@ -26,6 +26,7 @@ public class Library {
 		
 		int customNum = scan.nextInt();
 		int choices;
+		// show services
 		for(int i = 0; i<custom.length; i++)
 		{
 			if(customNum == 0)
