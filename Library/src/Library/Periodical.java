@@ -14,7 +14,7 @@ public class Periodical extends Publication{
 	{
 		super(publicationName, publicationDate);
 		this.type = type;
-		
+		// to add periodicals to the library
 		for(int i = 0; i < libo.periodicals.length; i++)
 		{
 			if(libo.periodicals[i] == null)
@@ -24,7 +24,7 @@ public class Periodical extends Publication{
 			}
 		}
 	}
-	
+	// to return id & name of periodicals
 	public String toString()
 	{
 		return "Periodical id: " + super.getPublicationID() + "\n" + "Periodical name: " + super.getPublicationName();
