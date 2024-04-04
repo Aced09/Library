@@ -68,7 +68,7 @@ public class Library {
 			}
 		}
 	}
-	
+	// to print book & periodicals information 
 	void availableContent()
 	{
 		for(int i = 0; i<books.length; i++)
@@ -92,7 +92,7 @@ public class Library {
 	}
 	
 
-	
+	// to remove book from the library
 	void removeBook(Book book)
 	{
 		boolean found = false;
@@ -122,7 +122,7 @@ public class Library {
 		}
 	}
 	
-	
+	// to remove periodical from the library
 	void removePeriodical(Periodical periodical)
 	{
 		boolean found = false;
