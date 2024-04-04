@@ -23,7 +23,7 @@ public class Customer {
 		librar.getCustom()[librar.getCustomCounter()] = this;
 		librar.setCustomCounter(librar.getCustomCounter()+1);;
 	}
-	
+	// checkout customer basket
 	void customerBasket()
 	{
 		
@@ -142,7 +142,7 @@ public class Customer {
 			}
 		}
 	}
-	
+	// add books & Periodicals to the customer's basket
 	private void checkoutBookorPeriodical(Publication p)
 	{
 		
@@ -174,7 +174,7 @@ public class Customer {
 		}
 	}
 	
-	
+	// to remove books or Periodicals from basket
 	void remove()
 	{
 		System.out.println("write id of content you want to remove");
