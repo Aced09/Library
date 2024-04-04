@@ -9,10 +9,11 @@ public class Library {
 	private int customCounter = 0;
 	private Scanner scan = new Scanner(System.in);
 	
-	
+	// applies library services
 	void peekCustomers()
 	{
 		System.out.println("choose customer number or press 0 to exit: ");
+		// show customers names
 		for(int i = 0; i<custom.length; i++)
 		{	
 			if(custom[i] != null)
@@ -23,15 +24,15 @@ public class Library {
 		
 		System.out.println();
 		
-		int r = scan.nextInt();
-		int m;
+		int customNum = scan.nextInt();
+		int choices;
 		for(int i = 0; i<custom.length; i++)
 		{
-			if(r == 0)
+			if(customNum == 0)
 			{
 				return;
 			}
-			if (custom[i] != null && r == i+1)
+			if (custom[i] != null && customNum == i+1)
 			{
 				System.out.println("choose action number:");
 				System.out.println("1. add content");
@@ -39,29 +40,29 @@ public class Library {
 				System.out.println("3. customer checkouts");
 				System.out.println("4. back");
 				System.out.println("5. close");
-				m = scan.nextInt();
-				if(m == 1)
+				choices = scan.nextInt();
+				if(choices == 1)
 				{
 					availableContent();
-					custom[r-1].check(this.books, this.periodicals);
+					custom[customNum-1].check(this.books, this.periodicals);
 					peekCustomers();
 				}
-				else if(m == 2)
+				else if(choices == 2)
 				{
-					custom[r-1].remove();
+					custom[customNum-1].remove();
 					peekCustomers();
 				}
-				else if(m == 3)
+				else if(choices == 3)
 				{
 					
-					custom[r-1].customerBasket();
+					custom[customNum-1].customerBasket();
 					peekCustomers();
 				}
-				else if(m == 4)
+				else if(choices == 4)
 				{
 					peekCustomers();
 				}
-				else if(m == 5)
+				else if(choices == 5)
 				{
 					return;
 				}
