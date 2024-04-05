@@ -28,7 +28,7 @@ public class Customer {
 	{
 		
 		System.out.println("Books checked out for " + name + ":");
-		
+		// to print books inside basket
 		for(int i = 0; i < books.length; i++)
 		{
 			if(books[i] != null)
@@ -40,7 +40,7 @@ public class Customer {
 		
 		
 		System.out.println("Periodical checked out for " + name + ":");
-		
+		// to print periodicals inside basket
 		for(int i = 0; i < periodicals.length; i++)
 		{
 			if(periodicals[i] != null)
@@ -51,7 +51,7 @@ public class Customer {
 		System.out.println();
 		
 	}
-	
+	// to checkout basket is full or not
 	boolean ismax(int numOfContent)
 	{
 		int counter = 0;
