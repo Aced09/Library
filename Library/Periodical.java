@@ -1,16 +1,33 @@
 package Library;
 
-public class Periodical {
+public class Periodical extends Publication{
 	private String type;
 	
+
+
 	Periodical()
 	{
 		
 	}
 	
-	Periodical(String type)
+	Periodical(String publicationName, String publicationDate,String type, Library libo)
 	{
+		super(publicationName, publicationDate);
 		this.type = type;
+		// to add periodicals to the library
+		for(int i = 0; i < libo.periodicals.length; i++)
+		{
+			if(libo.periodicals[i] == null)
+			{
+				libo.periodicals[i] = this;
+				return;
+			}
+		}
+	}
+	// to return id & name of periodicals
+	public String toString()
+	{
+		return "Periodical name: " + super.getPublicationName() + "\n ID: " + super.getPublicationID()  + "\n Taken: " + isTaken();
 	}
 
 	public String getType() {

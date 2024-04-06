@@ -1,36 +1,40 @@
 package Library;
 
 public abstract class Publication {
-	int publicationNumber;
-	String publicationAddress;
-	String publicationDate;
+	private int publicationID;
+	private static int idnumber = 1;
+	private String publicationName;
+	private String publicationDate;
+	boolean taken = false;
 	
 	Publication()
 	{
 		
 	}
 	
-	Publication(int publicationNumber, String publicationAddress, String publicationDate)
+	Publication(String publicationName, String publicationDate)
 	{
-		this.publicationNumber = publicationNumber;
-		this.publicationAddress = publicationAddress;
+		publicationID = idnumber;
+		idnumber++;
+		this.publicationName =  publicationName;
 		this.publicationDate = publicationDate;
 	}
 
-	public int getPublicationNumber() {
-		return publicationNumber;
+
+	public int getPublicationID() {
+		return publicationID;
 	}
 
-	public void setPublicationNumber(int publicationNumber) {
-		this.publicationNumber = publicationNumber;
+	public void setPublicationID(int publicationID) {
+		this.publicationID = publicationID;
 	}
 
-	public String getPublicationAddress() {
-		return publicationAddress;
+	public String getPublicationName() {
+		return publicationName;
 	}
 
-	public void setPublicationAddress(String publicationAddress) {
-		this.publicationAddress = publicationAddress;
+	public void setPublicationName(String publicationName) {
+		this.publicationName = publicationName;
 	}
 
 	public String getPublicationDate() {
@@ -41,5 +45,11 @@ public abstract class Publication {
 		this.publicationDate = publicationDate;
 	}
 	
-	
+	public boolean isTaken() {
+		return taken;
+	}
+
+	public void setTaken(boolean taken) {
+		this.taken = taken;
+	}
 }
