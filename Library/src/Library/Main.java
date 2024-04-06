@@ -11,7 +11,7 @@ public class Main {
 	Periodical e = new Periodical("the origins of code", "03/12/12", "magazine", libo);
 	Customer cs = new Customer("Ace", "0921892371", libo);
 	Customer ms = new Customer("malak", "0921298373", libo);
-	
+	//call this method to show library services & customers 
 	libo.peekCustomers();
 	}
 }
