@@ -33,7 +33,7 @@ public class Customer {
 		{
 			if(books[i] != null)
 			{
-				System.out.println("(ID) " + books[i].getPublicationID() + "(Name) " + books[i].getPublicationName());
+				System.out.println("(ID) " + books[i].getPublicationID() + " (Book name) " + books[i].getPublicationName());
 			}
 		}
 		System.out.println();
@@ -77,7 +77,7 @@ public class Customer {
 		}
 	}
 	
-	
+	//checks out books from library
 	void check(Book libooks[], Periodical liperiodicals[])
 	{
 		if(ismax(1))
@@ -98,7 +98,7 @@ public class Customer {
 			
 			if(libooks[i].getPublicationID() == thing)
 			{
-				System.out.println("are you sure you want "+ libooks[i].getPublicationName() );
+				System.out.println("are you sure you want "+ libooks[i].getPublicationName() + "\n");
 				String option = scan.next();
 				if(option.toLowerCase().equals("yes"))
 				{
@@ -130,7 +130,7 @@ public class Customer {
 				{
 					if(liperiodicals[i].isTaken())
 					{
-						System.out.println(liperiodicals[i].getPublicationName() + " (id num: " + liperiodicals[i].getPublicationID() + ")" + " is already taken");
+						System.out.println(liperiodicals[i].getPublicationName() + " (id num: " + liperiodicals[i].getPublicationID() + ")" + " is already taken\n");
 						return;
 					}
 					checkoutBookorPeriodical(liperiodicals[i]);
@@ -142,6 +142,7 @@ public class Customer {
 			}
 		}
 	}
+	
 	// add books & Periodicals to the customer's basket
 	private void checkoutBookorPeriodical(Publication p)
 	{
@@ -175,14 +176,15 @@ public class Customer {
 	}
 	
 	// to remove books or Periodicals from basket
-	void remove()
+	void remove(Book libooks[], Periodical liperiodicals[])
 	{
 		System.out.println("write id of content you want to remove");
 		for(int i = 0; i<books.length; i++)
 		{
 			if(books[i] != null)
 			{
-				System.out.println(books[i].getPublicationID() + " " + books[i].getPublicationName());
+				System.out.println(books[i]);
+				
 			}
 		}
 		
@@ -190,7 +192,7 @@ public class Customer {
 		{
 			if(periodicals[i] != null)
 			{
-				System.out.println(periodicals[i].getPublicationID() + " " + periodicals[i].getPublicationName());
+				System.out.println(periodicals[i]);
 			}
 		}
 		
@@ -208,6 +210,18 @@ public class Customer {
 				System.out.println("book removed");
 			}
 		}
+		for(int i = 0; i<libooks.length; i++)
+		{
+			if(libooks[i] == null)
+			{
+				continue;
+			}
+			if(libooks[i].getPublicationID() == n)
+			{
+				libooks[i].setTaken(false);
+			}
+		}
+		
 		for(int i = 0; i<periodicals.length; i++)
 		{
 			if(periodicals[i] == null)
@@ -218,6 +232,17 @@ public class Customer {
 			{
 				periodicals[i] = null;
 				System.out.println("periodical removed");
+			}
+		}
+		for(int i = 0; i<liperiodicals.length; i++)
+		{
+			if(liperiodicals[i] == null)
+			{
+				continue;
+			}
+			if(liperiodicals[i].getPublicationID() == n)
+			{
+				liperiodicals[i].setTaken(false);
 			}
 		}
 	}

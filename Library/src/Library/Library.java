@@ -12,63 +12,81 @@ public class Library {
 	// applies library services
 	void peekCustomers()
 	{
-		System.out.println("choose customer number or press 0 to exit: ");
-		// show customers names
-		for(int i = 0; i<custom.length; i++)
-		{	
-			if(custom[i] != null)
-			{
-				System.out.println(i+1 + ". " + custom[i].getName());
-			}
-		}
+		System.out.println("1. Show library content");
+		System.out.println("2. customer checkout");
+		System.out.println("3. exit");
 		
-		System.out.println();
-		
-		int customNum = scan.nextInt();
-		int choices;
-		// show services
-		for(int i = 0; i<custom.length; i++)
+		int option = scan.nextInt();
+		if(option == 1)
 		{
-			if(customNum == 0)
-			{
-				return;
+			availableContent();
+			peekCustomers();
+		}
+		else if(option == 3)
+		{
+			return;
+		}
+		else if(option == 2)
+		{
+			System.out.println("choose customer: ");
+			for(int i = 0; i<custom.length; i++)
+			{	
+				if(custom[i] != null)
+				{
+					System.out.println(i+1 + ". " + custom[i].getName());
+				}
 			}
-			if (custom[i] != null && customNum == i+1)
+			
+			System.out.println();
+			
+			int customNum = scan.nextInt();
+			int choices;
+			// show services
+			for(int i = 0; i<custom.length; i++)
 			{
-				System.out.println("choose action number:");
-				System.out.println("1. add content");
-				System.out.println("2. remove content");
-				System.out.println("3. customer checkouts");
-				System.out.println("4. back");
-				System.out.println("5. close");
-				choices = scan.nextInt();
-				if(choices == 1)
-				{
-					availableContent();
-					custom[customNum-1].check(this.books, this.periodicals);
-					peekCustomers();
-				}
-				else if(choices == 2)
-				{
-					custom[customNum-1].remove();
-					peekCustomers();
-				}
-				else if(choices == 3)
-				{
-					
-					custom[customNum-1].customerBasket();
-					peekCustomers();
-				}
-				else if(choices == 4)
-				{
-					peekCustomers();
-				}
-				else if(choices == 5)
+				if(customNum == 0)
 				{
 					return;
 				}
+				if (custom[i] != null && customNum == i+1)
+				{
+					System.out.println("choose action number:");
+					System.out.println("1. add content");
+					System.out.println("2. remove content");
+					System.out.println("3. customer checkouts");
+					System.out.println("4. back");
+					System.out.println("5. close");
+					choices = scan.nextInt();
+					if(choices == 1)
+					{
+						availableContent();
+						custom[customNum-1].check(this.books, this.periodicals);
+						peekCustomers();
+					}
+					else if(choices == 2)
+					{
+						custom[customNum-1].remove(this.books, this.periodicals);
+						peekCustomers();
+					}
+					else if(choices == 3)
+					{
+						
+						custom[customNum-1].customerBasket();
+						peekCustomers();
+					}
+					else if(choices == 4)
+					{
+						peekCustomers();
+					}
+					else if(choices == 5)
+					{
+						return;
+					}
+				}
 			}
 		}
+		// show customers names
+		
 	}
 	// to print book & periodicals information 
 	void availableContent()

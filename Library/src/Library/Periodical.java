@@ -27,7 +27,7 @@ public class Periodical extends Publication{
 	// to return id & name of periodicals
 	public String toString()
 	{
-		return "Periodical id: " + super.getPublicationID() + "\n" + "Periodical name: " + super.getPublicationName();
+		return "Periodical name: " + super.getPublicationName() + "\n ID: " + super.getPublicationID()  + "\n Taken: " + isTaken();
 	}
 
 	public String getType() {

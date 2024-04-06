@@ -29,7 +29,8 @@ public class Book extends Publication {
 	// to return id & name of the book 
 	public String toString()
 	{
-		return "Book id: " + super.getPublicationID() + "\n" + "Book name: " + super.getPublicationName();
+		return "Book name: " + super.getPublicationName() + "\n ID: " + super.getPublicationID() + "\n Publication date: " + super.getPublicationDate()
+		+ "\n Author: " + author + "\n Taken: " + isTaken();
 	}
 
 	public String getAuthor() {
